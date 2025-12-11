@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Loading...</title>
+    <style>
+        body {
+            margin: 0;
+            background: black;
+            color: #0f0;
+            font-family: monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        button {
+            background: black;
+            border: 2px solid #0f0;
+            padding: 15px 25px;
+            font-size: 20px;
+            color: #0f0;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        button:hover {
+            background: #0f0;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h2>Haz clic para continuar</h2>
+        <button onclick="goFull()">Entrar</button>
+    </div>
+
+    <script>
+        function goFull() {
+            // pantalla completa
+            const elem = document.documentElement;
+
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.webkitRequestFullscreen) {
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) {
+                elem.msRequestFullscreen();
+            }
+
+            // redirigir a tu página hacker
+            setTimeout(() => {
+                window.location.href = "index.html"; // <-- tu página
+            }, 300);
+        }
+    </script>
+
+</body>
+</html>
